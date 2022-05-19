@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:sickle_cell_app/screens/display.dart';
-import 'package:sickle_cell_app/screens/gridview.dart';
+import 'package:sickle_cell_app/models/to_do.dart';
+import 'package:sickle_cell_app/widgets/quotes.dart';
+import 'package:sickle_cell_app/widgets/todo_homepage.dart';
+// ignore: import_of_legacy_library_into_null_safe
+import 'package:scoped_model/scoped_model.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -12,171 +15,53 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-          backgroundColor: Colors.white,
-          elevation: 0.0,
-          title: const Text(
-            "Menu",
-            style: TextStyle(color: Colors.black),
-          )),
-      body: SingleChildScrollView(
-        child: Center(
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 15,
-              ),
-              SizedBox(
-                height: 200,
-                width: 500,
-                child: Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    elevation: 5.0,
-                    shadowColor: Colors.red,
-                    child: const Align(
-                      alignment: Alignment.center,
-                      child: Text('soon something will be here'),
-                    )),
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SizedBox(
-                          height: 200,
-                          width: 200,
-                          child: GestureDetector(
-                            onTap: () {
-                              Navigator.push(context,
-                                  MaterialPageRoute(builder: (context) {
-                                return PostsPage();
-                              }));
-                            },
-                            child: Card(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              elevation: 0,
-                              child: const Icon(
-                                Icons.remember_me,
-                                size: 50.0,
-                              ),
-                            ),
-                          ))
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      SizedBox(
-                          height: 200,
-                          width: 200,
-                          child: GestureDetector(
-                            onTap: () {
-                              Navigator.push(context,
-                                  MaterialPageRoute(builder: (context) {
-                                return const Gridview();
-                              }));
-                            },
-                            child: Card(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              elevation: 0,
-                              child: const Icon(
-                                Icons.call,
-                                size: 50.0,
-                              ),
-                            ),
-                          ))
-                    ],
-                  )
-                ],
-              ),
-              const SizedBox(
-                height: 15.0,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SizedBox(
-                          height: 200,
-                          width: 200,
-                          child: GestureDetector(
-                            onTap: () {},
-                            child: Card(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              elevation: 0,
-                              child: const Icon(
-                                Icons.remember_me,
-                                size: 50.0,
-                              ),
-                            ),
-                          ))
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      SizedBox(
-                          height: 200,
-                          width: 200,
-                          child: GestureDetector(
-                            onTap: () {},
-                            child: Card(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              elevation: 0,
-                              child: const Icon(
-                                Icons.call,
-                                size: 50.0,
-                              ),
-                            ),
-                          ))
-                    ],
-                  )
-                ],
-              ),
-              const SizedBox(
-                height: 15.0,
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+    // ignore: unused_local_variable
+    ToDoModel model;
+    return ScopedModel<ToDoModel>(
+
+        model: model = ToDoModel(),
+        child: Scaffold(
+          //extendBodyBehindAppBar: true,
+          appBar: AppBar(
+              backgroundColor: Colors.transparent,
+              elevation: 0.0,
+              title: const Text(
+                "Home",
+                style: TextStyle(color: Colors.black, fontSize: 22.0),
+              )),
+          body: SingleChildScrollView(
+            child: Center(
+              child: Column(
+                children: const [
                   SizedBox(
-                      height: 200,
-                      width: 500,
-                      child: GestureDetector(
-                        onTap: () {},
-                        child: Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          elevation: 0,
-                          child: const Icon(
-                            Icons.remember_me,
-                            size: 50.0,
-                          ),
+                    height: 20.0,
+                  ),
+                  Quotecard(),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  SizedBox(
+                    height: 50.0,
+                  ),
+                  Align(
+                      alignment: Alignment.topLeft,
+                      widthFactor: 10.0,
+                      child: Text(
+                        '     To-Do',
+                        style: TextStyle(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
                         ),
-                      ))
+                        textAlign: TextAlign.right,
+                      )),
+                  SizedBox(
+                    height: 50.0,
+                  ),
+                  ToDOPage(),
                 ],
               ),
-            ],
+            ),
           ),
-        ),
-      ),
-    );
+        ));
   }
 }

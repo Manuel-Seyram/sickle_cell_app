@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sickle_cell_app/screens/homepage.dart';
+import 'package:sickle_cell_app/widgets/navbar.dart';
 
 
 class SplashScreen extends StatefulWidget{
@@ -22,7 +22,7 @@ class _SplashScreen extends State<SplashScreen>{
           //pushReplacement = replacing the route so that
           //navigation to Home page.
           builder: (context){
-              return const MyHomePage();       
+              return const Navbar();       
         }));
     }); 
 
@@ -35,7 +35,7 @@ class _SplashScreen extends State<SplashScreen>{
           body:Container(      
       decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/sickle_app.png'),
+            image: AssetImage('assets/sickle_cell.png'),
             fit: BoxFit.cover,
           ),
         ),

@@ -1,23 +1,25 @@
 import 'dart:convert';
-import 'dart:io';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
+
 import 'models/quotes.dart';
 import 'package:http/http.dart';
 
 class Httpservice {
   final Uri postURL = Uri.parse(
-    "https://quotes.rest/qod?category=inspire",
+    "https://quotes.rest/qod?category=funny",
   );
-  static dynamic quoteOfTheDay;
 
   Future<List<Quotes>> getQuotes() async {
     Response res = await get(postURL);
 
     final jsonItems = json.decode(res.body)["contents"]["quotes"];
     List<Quotes> quote = jsonItems.map<Quotes>((json) {
+      if (kDebugMode) {
+        print(json);
+      }
       return Quotes.fromJson(json);
     }).toList();
-    quoteOfTheDay = quote;
+    // quoteOfTheDay = quote;
     return quote;
   }
 }

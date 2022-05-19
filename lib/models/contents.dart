@@ -6,7 +6,7 @@ class Contents {
   Contents({this.quotes});
 
   Contents.fromJson(Map<String, dynamic> json) {
-    if (json['quotes']) {
+    if (json['quotes']!= null) {
       quotes = <Quotes>[];
       json['quotes'].forEach((v) {
         quotes!.add(Quotes.fromJson(v));
@@ -16,7 +16,7 @@ class Contents {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
-    if (quotes == null) {
+    if (quotes != null) {
       data['quotes'] = quotes!.map((v) => v.toJson()).toList();
     }
     return data;
