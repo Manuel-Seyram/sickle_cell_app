@@ -4,6 +4,7 @@ import 'package:sickle_cell_app/extras/database/database.dart';
 import 'package:sickle_cell_app/extras/notifications_manager.dart';
 
 class AddTodo extends StatefulWidget {
+  
   final double height;
   final AppDatabase _database;
   final NotificationManager manager;
@@ -15,6 +16,7 @@ class AddTodo extends StatefulWidget {
 }
 
 class _AddTodoState extends State<AddTodo> {
+  bool dontWarnAboutMultipleDatabases = true;
   static final _formKey = GlobalKey<FormState>();
   late String _name;
   late String _extra;

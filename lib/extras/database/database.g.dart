@@ -8,6 +8,7 @@ part of 'database.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps, unnecessary_this
 class ToDoTableData extends DataClass implements Insertable<ToDoTableData> {
+  bool dontWarnAboutMultipleDatabases = true;
   final int? id;
   final String name;
   final String image;

@@ -5,6 +5,7 @@ import 'package:sickle_cell_app/extras/notifications_manager.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 class ToDoModel extends Model with IconMixin {
+  bool dontWarnAboutMultipleDatabases = true;
   final AppDatabase _database = AppDatabase();
   final NotificationManager notificationManager = NotificationManager();
   ToDoModel ();
