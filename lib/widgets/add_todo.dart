@@ -39,7 +39,7 @@ class _AddTodoState extends State<AddTodo> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 const Text(
-                  'Add Task',
+                  'Add To-D0',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w600,
@@ -53,7 +53,7 @@ class _AddTodoState extends State<AddTodo> {
                   child: Icon(
                     Icons.close,
                     size: 30,
-                    color: Theme.of(context).primaryColor.withOpacity(.65),
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                 )
               ],
@@ -90,7 +90,7 @@ class _AddTodoState extends State<AddTodo> {
                 textColor: Colors.white,
                 highlightColor: Colors.red.shade100,
                 child: Text(
-                  'Add Task'.toUpperCase(),
+                  'Add To-Do'.toUpperCase(),
                   style: const TextStyle(
                       fontSize: 20, fontWeight: FontWeight.bold),
                 ),
@@ -196,7 +196,7 @@ class _AddTodoState extends State<AddTodo> {
         width: 70,
         decoration: BoxDecoration(
           color: (index == _selectedIndex)
-              ? Theme.of(context).colorScheme.secondary.withOpacity(.4)
+              ? Theme.of(context).colorScheme.primary
               : Colors.transparent,
           borderRadius: BorderRadius.circular(40),
         ),

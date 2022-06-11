@@ -42,9 +42,9 @@ class _ToDoState extends State<ToDo> {
              child: Column(
                children:  [
                  const SizedBox(height: 60.0,),
-                 const Text('Welcome to ToDo. Plan your day here', style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w400),),
+                 const Text('Welcome to To-Do. Plan your day here', style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w400),),
                  const SizedBox(height: 10.0,),
-                 const Text('Tap ToDo to begin', style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w400),),
+                 const Text('Tap To-Do to begin', style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w400),),
                  const SizedBox(height: 20.0,),
                  MaterialButton(
                    elevation: 5.0,
@@ -54,7 +54,7 @@ class _ToDoState extends State<ToDo> {
                  minWidth: 5.0,
                  color: Colors.red.shade100,
                  visualDensity: VisualDensity.comfortable,
-                 child: const Text('ToDo', style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w400) ,),
+                 child: const Text('To-Do', style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w400) ,),
                    onPressed: (){
                      buildBottomSheet(deviceHeight, model);
                    }

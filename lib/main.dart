@@ -3,9 +3,14 @@ import 'package:sickle_cell_app/screens/splash_screen.dart';
 
 void main() {
 
-  runApp(const MaterialApp(
+  runApp( MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: SplashScreen(),
+    theme: ThemeData(
+    colorScheme: ColorScheme.light(
+      primary: Colors.red.shade100,
+  	),
+  ),
+    home: const SplashScreen(),
   ));
 }
 

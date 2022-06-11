@@ -20,7 +20,7 @@ class ToDoEmptyState extends StatelessWidget {
           ),
           const SizedBox(height: 50.0),
           const Text(
-            'No ToDos Added yet',
+            'No To-Dos Added yet',
             style: TextStyle(
                 fontWeight: FontWeight.w400, fontSize: 16),
           )
