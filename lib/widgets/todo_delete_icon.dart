@@ -72,7 +72,7 @@ class _DeleteIconState extends State<DeleteIcon> {
               }
               // show delete snakbar
               // ignore: deprecated_member_use
-              Scaffold.of(context).showSnackBar(
+              ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(
                   backgroundColor: Colors.red,
                   content: Text(
